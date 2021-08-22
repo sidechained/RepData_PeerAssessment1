@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
+title: "Reproducible Research: Course Project 1"
 output: 
   html_document:
     keep_md: true
@@ -23,7 +23,7 @@ I first calculated the total number of steps per day (ignoring missing values), 
 
 
 ```r
-steps_per_day <- data %>% group_by(date) %>% summarise(steps = sum(steps)) # keep 'interval' or not?
+steps_per_day <- data %>% group_by(date) %>% summarise(steps = sum(steps))
 hist(steps_per_day$steps, main = "Steps Per Day", xlab = "Steps", col = "red", breaks = 10)
 ```
 
@@ -94,7 +94,7 @@ Next I made a histogram of the total number of steps taken each day:
 
 
 ```r
-imputed_steps_per_day <- imputed_data %>% group_by(date) %>% summarise(steps = sum(steps)) # keep 'interval' or not?
+imputed_steps_per_day <- imputed_data %>% group_by(date) %>% summarise(steps = sum(steps))
 hist(imputed_steps_per_day$steps, main = "Imputed Steps Per Day", xlab = "Steps", col = "red", breaks = 10)
 ```
 
